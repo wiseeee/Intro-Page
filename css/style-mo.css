@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+/* reset */
+html {-webkit-text-size-adjust: none; text-size-adjust: none;}
+body {margin: 0;}
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p {margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700;}
+a {color: inherit; text-decoration: inherit; cursor: pointer;}
+li {list-style: none;}
+img {vertical-align: middle; max-width: 100%;}
+address, em, i, cite {font-style: normal;}
+table {border-collapse: collapse;}
+table caption {overflow: hidden; width: 0; height: 0;}
+i[class^="fa"] {position: relative; display: inline-block; vertical-align: middle; overflow: hidden;}
+i[class^="fa"] span {position: absolute; left: -9999px;}
+.ir-hidden {position: absolute; left: -9999px;}
+.mobile {display: none !important;}
+br.only-m {content: '';}
+br.only-m::after {content: '\00a0';}
+
+/* common */
+body {font-family: 'NotoSansKR', sans-serif;  font-size: 16px; color: #fff; position: relative;}
+#skip-nav {position: fixed; left: 0; top: -40px; width: 100%; line-height: 40px; text-align: center; background-color: rgba(0, 0, 0, 0.7); color: #ffffff; font-size: 16px; transition: top 0.3s; z-index: 10000;}
+#skip-nav:focus {top: 0;}
+
+
+.flex-contain {display: flex;}
+
+/*header*/
+#header {position: fixed; top: 0; left: 50%; transform: translate(-50%, 0); text-transform: uppercase; z-index: 9999; width: 100vw; }
+#header.on {color: #000; background-color: rgba(255, 255, 255, .7); width: 100%; }
+#header .wrapper {margin: 20px auto;}
+#header .wrapper > ul {justify-content: space-around; align-items: center; width: 100%; flex-wrap: nowrap;}
+#header .wrapper > ul > li {font-size: 2.8vw;}
+
+/*page*/
+#page1 {width: 100vw; height: 70vh; position: relative;}
+#page1 .wrapper {width: 100%; height: 100%; background-color: #dd6611; background-image: url('../img/mimoticon2.gif'); background-repeat: no-repeat; background-position: 50% 5%; background-size: 80vw; background-attachment:fixed;}
+#page1 .txt-wrap {display: none;}
+#page1 .txt-typing-wrap {position: fixed; top: 50%; left: 13%; transform: translate(0, -50%); z-index: 0; }
+#page1 .txt-typing-wrap > ul > li {display: block; font-size: 7vw; font-family: 'ONE-Mobile-POP'; line-height: 1.5;}
+#page1 .txt-typing-wrap > ul > li strong {font-weight: 700;}
+#page1 .txt-typing-wrap > ul > li.on {display: inline-block; animation-name: cursor; animation-duration: 0.3s; animation-iteration-count: infinite;  z-index: 0; } 
+@keyframes cursor{ 
+  0%{border-right: 1px solid #fff} 
+  50%{border-right: 1px solid #000} 
+  100%{border-right: 1px solid #fff} 
+}
+
+
+#page2 {position: relative; z-index: 1; margin: 50px 5vw; overflow: hidden;  }
+.page h2 {color: #2A5769; font-size: 8vw; position: relative; display: inline-block;}
+.page h2::after {content: ''; display: block; width: 100vw; height: 5px; position: absolute; top: 50%; left: 120%; background-color: #2A5769;}
+#page2 .wrapper {padding-bottom: 14px;}
+#page2 .wrapper .flex-contain { flex-direction: column; width: 100%; gap: 50px; padding-top: 40px;  transform: translate(250%, 0); transition: 1s all; opacity: 0;}
+#page2.on .wrapper .flex-contain {transform: translate(0, 0); opacity: 1;}
+#page2 .wrapper .content-img {flex-basis: 50%;  height: 40vw; overflow: hidden; box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);}
+#page2 .wrapper .content-img img {width: 100%; height: 100%; object-fit:cover; }
+#page2 .wrapper .content-txt {color: #000; word-break: keep-all; width: 100%; line-height: 1.9; font-size: 1.7vw;}
+
+#page3 {position: relative; z-index: 1; margin: 50px 5vw;  overflow: hidden;}
+#page3 .wrapper > ul {padding-top: 60px;}
+#page3 .wrapper > ul > li {width: 100%; overflow: hidden;}
+#page3 .wrapper > ul > li a{ position: relative;  display: inline-block; overflow: hidden;}
+#page3 .wrapper > ul > li a .img-wrap { border: 5px solid #2A5769;}
+#page3 .wrapper > ul > li a:hover .roll-over {position: absolute; top: 0; left: 0; transform: translate(0, 0); background-color: rgb(0, 0, 0, .7); width: 100%; height: 100%; text-align: center;} 
+#page3 .wrapper > ul > li a .roll-over {transform: translate(0, 200%); transition: 0.5s all ease; position: relative; } 
+#page3 .wrapper > ul > li a .roll-over .center{position: absolute; top: 0; left: 0; transform: translate(0, 0);}
+#page3 .wrapper > ul > li a:hover .roll-over .center{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;}
+#page3 .wrapper > ul > li a .roll-over .name {font-size: 6vw; font-weight: 700; padding-bottom: 10%;}
+#page3 .wrapper > ul > li a .roll-over .skill {color: #d0d0d0; display: inline-block; border: 2px solid #d0d0d0; border-radius: 10px; padding: 5px;}
+#page3 .wrapper > ul > li a .roll-over .skill:not(:last-child) {margin-right: 10px;}
+#page3 .wrapper > ul > li .button-wrap {text-align: center; padding: 30px 0;}
+#page3 .wrapper > ul > li .button-wrap a {font-size: 18px;  padding: 10px 20px; text-transform: uppercase; font-weight: 700;}
+#page3 .wrapper > ul > li .button-wrap .box-button {border: 2px solid #2A5769; color: #2A5769;}
+#page3 .wrapper > ul > li .button-wrap .box-button:hover { color: #fff; transition: all 0.3s;}
+#page3 .wrapper > ul > li .button-wrap .box-button:hover:before {width: 100%;}
+#page3 .wrapper > ul > li .button-wrap .box-button:before {content: ''; display: block; width: 0; height: 100%; position: absolute; top: 0; left: 0; transition: all .3s; background-color: #2A5769; z-index: -1;}
+#page3 .wrapper > ul > li .button-wrap a:nth-child(2) {color: #2A5769;}
+#page3 .wrapper > ul > li .button-wrap a:nth-child(2):hover {transform: translateX(5px); transition: .2s all;}
+.page .up-scroll {transition: transform 0.7s, opacity 1s;}
+
+
+
+#page4 {width: 100vw; height: 50vh; background: url('../img/page2_bg.jpeg') no-repeat; background-size: cover; background-attachment: fixed; background-position: center; position: relative; z-index: 1;}
+#page4 .wrapper {background-color:rgba(0, 0, 0, .7);  width: 100%; height: 100%; text-align: center; }
+#page4 .wrapper .txt-wrap {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;}
+#page4 .wrapper .txt-wrap p {text-transform: uppercase; font-size: 8vw; font-family: 'ONE-Mobile-POP'; padding-bottom: 40px;}
+#page4 .wrapper .txt-wrap a {font-size: 5vw; line-height: 3; display: block;}
+#page4 .wrapper .txt-wrap i {padding-right: 20px;}
+
+#footer {background-color: #000; color: grey; text-align: center; font-size: 1.2vw; padding: 20px 0;}
+
+@media only screen and (min-width: 500px) {
+  #page1 {height: 100vh;}
+  #page1 .txt-typing-wrap {top: 78%;}
+}
