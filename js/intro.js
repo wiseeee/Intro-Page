@@ -6,8 +6,8 @@ $(document).ready(function() {
   typingHeader();
   scrollAnimate();
   pageVisibility('#page2');
-  goToTop ();
   topCheckScroll();
+  pageChange();
 });
 
 function preventDefaultAnchor() {
@@ -125,23 +125,26 @@ function pageVisibility(selector) {
   })
 }
 
-//스크롤 탑으로 올라가는 코드 jquery
-//stop을 넣어주면 que 쌓이는거 막을 수 잇어여
-function goToTop () {
-  $('#header a').on('click', function() {
-    $('html').stop(true).animate({'scrollTop': 0}, 500, function() {
-    });
-  })
-}
 
-function showPage(n) {
-  var scrollAmt = $('section.page:eq(' + (n - 1) + ')').offset().top;
-  $('html').stop(true).animate({'scrollTop': scrollAmt}, 500, function() {
-    isBlocked = false;
+function pageChange() {
+  var numPage = $('section.page').length;
+  var pageNow = 0;
+  var pagePrev = 0;
+  var pageNext = 0;
+
+  showPage(1);
+  
+  $('#header .wrapper ul > li > a').on('click', function() {
+    var index = $('#header .wrapper ul > li').index($(this).parent());
+    showPage(index + 1);
   });
-  $('#page-indicator > li').removeClass('on');
-  $('#page-indicator > li:eq(' + (n - 1) + ')').addClass('on');
-  pageNow = n;
-  pagePrev = (n <= 1) ? 1 : (n - 1);
-  pageNext = (n >= numPage) ? numPage : (n + 1);
+
+  function showPage(n) {
+    var scrollAmt = $('section.page:eq(' + (n - 1) + ')').offset().top;
+    $('html').stop(true).animate({'scrollTop': scrollAmt}, 500, function() {
+    });
+    pageNow = n;
+    pagePrev = (n <= 1) ? 1 : (n - 1);
+    pageNext = (n >= numPage) ? numPage : (n + 1);
+  }
 }
