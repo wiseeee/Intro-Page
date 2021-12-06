@@ -114,9 +114,8 @@ function pageVisibility(selector) {
     $(selector).each(function() {
       var $selector = $(this)
       var start = $selector.offset().top - $(window).height();
-      var end = $selector.offset().top + $selector.outerHeight();
       var scrollAmt = $(document).scrollTop();
-      if (scrollAmt > start && scrollAmt < end) {
+      if (scrollAmt >= start - 30) {
         $selector.addClass('on');
       } else {
         $selector.removeClass('on');
