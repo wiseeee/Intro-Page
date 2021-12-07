@@ -32,6 +32,16 @@ function typingHeader() {
   function typing(){
     $(".txt-typing-wrap ul li").removeClass("on");
     $(".txt-typing-wrap ul li").eq(liIndex).addClass("on");
+    $(window).on('scroll resize', function() {
+      var scrollAmt = $(document).scrollTop();
+      var windowHeight = $(window).height();
+      if (scrollAmt > windowHeight / 2) {
+        $(".txt-typing-wrap ul li").eq(liIndex).removeClass("on");
+      } else {
+        $(".txt-typing-wrap ul li").eq(liIndex).addClass("on");
+      }
+    })
+    
     if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
       $(".txt-typing-wrap ul li").eq(liIndex).append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
       typingIdx++; 
@@ -58,15 +68,7 @@ function typingHeader() {
           }
     } 
   }  
-  $(window).on('scroll resize', function() {
-    var scrollAmt = $(document).scrollTop();
-    var windowHeight = $(window).height();
-    if (scrollAmt > windowHeight / 2) {
-      $(".txt-typing-wrap ul li").eq(liIndex).removeClass("on");
-    } else {
-      $(".txt-typing-wrap ul li").eq(liIndex).addClass("on");
-    }
-  })
+
 };
 
 //header scroll시 addClass('on')

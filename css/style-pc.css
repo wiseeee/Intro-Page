@@ -48,40 +48,50 @@ body {font-family: 'NotoSansKR', sans-serif;  font-size: 16px; color: #fff; posi
 }
 
 
+
 #page2 {position: relative; z-index: 2; margin: 100px 5vw;}
 .page .title-wrap {overflow: hidden; width: 100%; }
 .page h2 {color: #2A5769; font-size: 4vw; position: relative; display: inline-block;}
 .page h2::after {content: ''; display: block; width: 100vw; height: 5px; position: absolute; top: 50%; left: 120%; background-color: #2A5769;}
 #page2 .wrapper {padding-bottom: 14px;}
-#page2 .wrapper .flex-contain {justify-content: space-around; align-items: flex-start; width: 100%; gap: 50px; padding-top: 40px;  transform: translate(250%, 0); transition: 1s all; opacity: 0;}
+#page2 .wrapper .flex-contain {justify-content: space-between; align-items: flex-start; width: 100%; gap: 50px; padding-top: 40px;  transform: translate(250%, 0); transition: 1s all; opacity: 0;}
 #page2.on .wrapper .flex-contain {transform: translate(0, 0); opacity: 1;}
-#page2 .wrapper .content-img {flex-basis: 50%;  height: 40vw; overflow: hidden; box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);}
+#page2 .wrapper .content-img {flex-basis: 40%;  height: 40vw; overflow: hidden; box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);}
 #page2 .wrapper .content-img img {width: 100%; height: 100%; object-fit:cover; }
-#page2 .wrapper .content-txt {color: #000; word-break: keep-all; width: 50%; line-height: 1.9; font-size: 1.7vw;}
+#page2 .wrapper .content-txt {color: #000; word-break: keep-all; flex-basis: 55%; line-height: 1.9; font-size: 1.5vw;}
+#page2 .wrapper .content-txt > ul {width: 100%; display: flex; flex-wrap: nowrap; align-items: center; padding-top: 30px; }
+#page2 .wrapper .content-txt > ul > li {flex: 1 1 0;}
+#page2 .wrapper .content-txt > ul > li:not(:last-child) {padding-right: 10px;}
+
+
 
 #page3 {position: relative; z-index: 2; margin: 100px 5vw;  overflow: hidden;}
 #page3 .wrapper > ul {padding-top: 60px;}
-#page3 .wrapper > ul > li {float: left; width: calc(50% - 40px); overflow: hidden;}
-#page3 .wrapper > ul > li:nth-child(odd) {margin: 0px;}
-#page3 .wrapper > ul > li:nth-child(even) {margin-top: 120px; margin-left: 80px;}
-#page3 .wrapper > ul > li a{ position: relative;  display: inline-block; overflow: hidden;}
-#page3 .wrapper > ul > li a .img-wrap { border: 5px solid #2A5769;}
+#page3 .wrapper > ul > li {width: 100%; gap: 30px;}
+#page3 .wrapper > ul > li .flex-box-1 {position: relative; overflow: hidden; width: 50%;}
+#page3 .wrapper > ul > li .flex-box-1 .img-wrap { border: 5px solid #2A5769;}
+#page3 .wrapper > ul > li a{position: relative; display: inline-block; overflow: hidden;}
 #page3 .wrapper > ul > li a:hover .roll-over {position: absolute; top: 0; left: 0; transform: translate(0, 0); background-color: rgb(0, 0, 0, .7); width: 100%; height: 100%; text-align: center;} 
 #page3 .wrapper > ul > li a .roll-over {transform: translate(0, 200%); transition: 0.5s all ease; position: relative; } 
 #page3 .wrapper > ul > li a .roll-over .center{position: absolute; top: 0; left: 0; transform: translate(0, 0);}
 #page3 .wrapper > ul > li a:hover .roll-over .center{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 #page3 .wrapper > ul > li a .roll-over .name {font-size: 4vw; font-weight: 700; padding-bottom: 10%;}
-#page3 .wrapper > ul > li a .roll-over .skill {font-size: 1.2vw; color: #d0d0d0; display: inline-block; border: 2px solid #d0d0d0; border-radius: 10px; padding: 5px;}
-#page3 .wrapper > ul > li a .roll-over .skill:not(:last-child) {margin-right: 10px;}
-#page3 .wrapper > ul > li .button-wrap {text-align: center; padding: 30px 0;}
-#page3 .wrapper > ul > li .button-wrap a {font-size: 18px;  padding: 10px 20px; text-transform: uppercase; font-weight: 700;}
-#page3 .wrapper > ul > li .button-wrap .box-button {border: 2px solid #2A5769; color: #2A5769;}
-#page3 .wrapper > ul > li .button-wrap .box-button:hover { color: #fff; transition: all 0.3s;}
-#page3 .wrapper > ul > li .button-wrap .box-button:hover:before {width: 100%;}
-#page3 .wrapper > ul > li .button-wrap .box-button:before {content: ''; display: block; width: 0; height: 100%; position: absolute; top: 0; left: 0; transition: all .3s; background-color: #2A5769; z-index: -1;}
-#page3 .wrapper > ul > li .button-wrap a:nth-child(2) {color: #2A5769;}
-#page3 .wrapper > ul > li .button-wrap a:nth-child(2):hover {transform: translateX(5px); transition: .2s all;}
+#page3 .wrapper > ul > li .flex-box-1 .button-wrap {text-align: center; padding: 30px 0;}
+#page3 .wrapper > ul > li .flex-box-1 .button-wrap a {font-size: 18px;  padding: 10px 20px; text-transform: uppercase; font-weight: 700;}
+#page3 .wrapper > ul > li .flex-box-1 .button-wrap .box-button {border: 2px solid #2A5769; color: #2A5769;}
+#page3 .wrapper > ul > li .flex-box-1 .button-wrap .box-button:hover { color: #fff; transition: all 0.3s;}
+#page3 .wrapper > ul > li .flex-box-1 .button-wrap .box-button:hover:before {width: 100%;}
+#page3 .wrapper > ul > li .flex-box-1 .button-wrap .box-button:before {content: ''; display: block; width: 0; height: 100%; position: absolute; top: 0; left: 0; transition: all .3s; background-color: #2A5769; z-index: -1;}
+#page3 .wrapper > ul > li .flex-box-1 .button-wrap a:nth-child(2) {color: #2A5769;}
+#page3 .wrapper > ul > li .flex-box-1 .button-wrap a:nth-child(2):hover {transform: translateX(5px); transition: .2s all;}
+#page3 .wrapper > ul > li .flex-box-2 {color: #000;}
+#page3 .wrapper > ul > li .flex-box-2 .title {font-size: 2vw; font-weight: 700;}
+#page3 .wrapper > ul > li .flex-box-2 .explain li {font-size: 1.6vw; padding-top: 30px;}
+#page3 .wrapper > ul > li .flex-box-2 .explain li::before {content: '-'; padding-right: 10px;}
+
 .page .up-scroll {transition: transform 0.7s, opacity 1s;}
+
+
 
 
 #page4 {width: 100vw; height: 80vh; background: url('../img/page2_bg.jpeg') no-repeat; background-size: cover; background-attachment: fixed; position: relative; z-index: 1;}
