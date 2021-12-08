@@ -35,9 +35,12 @@ body {font-family: 'NotoSansKR', sans-serif;  font-size: 16px; color: #fff; posi
 
 /*page*/
 #page1 {width: 100vw; height: 70vh; position: relative;}
-#page1 .wrapper {width: 100%; height: 100%; background-color: #dd6611; background-image: url('../img/mimoticon2.gif'); background-repeat: no-repeat; background-position: 50% 3%; background-size: 80vw; background-attachment:fixed;}
+#page1 .wrapper {width: 100%; height: 100%; background-color: #dd6611; }
+#page1 .wrapper .flex-contain {position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; width: 100%; padding: 0 5vw; flex-direction: column; } 
+#page1 .wrapper .flex-contain .img-wrap {width: 100%; text-align: center;}
+#page1 .wrapper .flex-contain .img-wrap img {width: 80%; }
 #page1 .txt-wrap {display: none;}
-#page1 .txt-typing-wrap {position: fixed; top: 50%; left: 13%; transform: translate(0, -50%); z-index: 0; }
+#page1 .txt-typing-wrap {text-align: center; }
 #page1 .txt-typing-wrap > ul > li {display: block; font-size: 7vw; font-family: 'ONE-Mobile-POP'; line-height: 1.5;}
 #page1 .txt-typing-wrap > ul > li strong {font-weight: 700;}
 #page1 .txt-typing-wrap > ul > li.on {display: inline-block; animation-name: cursor; animation-duration: 0.3s; animation-iteration-count: infinite;  z-index: 0; } 
@@ -48,7 +51,7 @@ body {font-family: 'NotoSansKR', sans-serif;  font-size: 16px; color: #fff; posi
 }
 
 
-#page2 {position: relative; z-index: 1; margin: 50px 5vw; overflow: hidden;  }
+#page2 {position: relative; z-index: 1; padding-top: 50px; margin: 0 5vw; overflow: hidden; background-color: #fff; }
 .page h2 {color: #2A5769; font-size: 8vw; position: relative; display: inline-block;}
 .page h2::after {content: ''; display: block; width: 100vw; height: 5px; position: absolute; top: 50%; left: 120%; background-color: #2A5769;}
 #page2 .wrapper {padding-bottom: 14px;}
@@ -61,7 +64,7 @@ body {font-family: 'NotoSansKR', sans-serif;  font-size: 16px; color: #fff; posi
 #page2 .wrapper > ul > li {width: calc((100% - 60px) / 4); padding-top: 30px; }
 #page2 .wrapper > ul > li:not(:nth-child(4n)) {padding-right: 20px;}
 
-#page3 {position: relative; z-index: 1; margin: 50px 5vw;  overflow: hidden;}
+#page3 {position: relative; z-index: 1; padding: 50px 0; margin: 0 5vw; overflow: hidden; background-color: #fff; }
 #page3 .wrapper > ul > li {width: 100%; overflow: hidden; flex-direction: column; padding-top: 30px;}
 #page3 .wrapper > ul > li a{ position: relative;  display: inline-block; overflow: hidden;}
 #page3 .wrapper > ul > li a .img-wrap { border: 5px solid #2A5769;}
